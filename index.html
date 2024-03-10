@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Música en la página</title>
 </head>
-<body>
+<body onclick="PlayAudio()">
 
-<audio id="musica" controls loop>
+<audio id="musica1" controls autoplay loop>
   <source src="music.mp3" type="audio/mp3">
-  Tu navegador no soporta la etiqueta de audio.
+  Tu navegador no soporta el elemento de audio.
 </audio>
 
 <script>
-  // Inicia la reproducción automáticamente al cargar la página
-  document.getElementById('musica').play();
+	fuction PlayAudio() {
+	    document.getElementById("musica1").play();
+	}
 </script>
 
 </body>
