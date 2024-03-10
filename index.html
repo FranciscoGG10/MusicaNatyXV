@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Música en la página</title>
 </head>
-<body onclick="PlayAudio()">
+<body onclick="iniciarMusica()">
 
-<audio id="musica1" controls autoplay loop>
-  <source src="music.mp3" type="audio/mp3">
-  Tu navegador no soporta el elemento de audio.
+<audio id="musica" controls loop>
+  <source src="musica.mp3" type="audio/mp3">
+  Tu navegador no soporta la etiqueta de audio.
 </audio>
 
 <script>
-	fuction PlayAudio() {
-	    document.getElementById("musica1").play();
-	}
+  function iniciarMusica() {
+    var musica = document.getElementById('musica');
+    musica.play();
+    // Elimina el evento clic después de la primera interacción
+    document.body.removeEventListener('click', iniciarMusica);
+  }
+
+  // Agrega el evento clic al cuerpo de la página
+  document.body.addEventListener('click', iniciarMusica);
 </script>
 
 </body>
