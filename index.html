@@ -7,10 +7,15 @@
 </head>
 <body>
 
-<audio controls autoplay loop>
+<audio id="musica" controls loop>
   <source src="music.mp3" type="audio/mp3">
   Tu navegador no soporta la etiqueta de audio.
 </audio>
+
+<script>
+  // Inicia la reproducción automáticamente al cargar la página
+  document.getElementById('musica').play();
+</script>
 
 </body>
 </html>
