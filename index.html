@@ -1,41 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Música en la página</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        #musica {
-            width: 80%; /* ajusta el ancho según tus necesidades */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor de Canciones</title>
 </head>
-<body onclick="iniciarMusica()">
+<body>
 
-<audio id="musica" controls loop>
-  <source src="musica.mp3" type="audio/mp3">
-  Tu navegador no soporta la etiqueta de audio.
+<audio controls autoplay>
+  <source src="music.mp3" type="audio/mp3">
+  Tu navegador no soporta el elemento de audio.
 </audio>
-
-<script>
-  function iniciarMusica() {
-    var musica = document.getElementById('musica');
-    musica.play();
-    // Elimina el evento clic después de la primera interacción
-    document.body.removeEventListener('click', iniciarMusica);
-  }
-
-  // Agrega el evento clic al cuerpo de la página
-  document.body.addEventListener('click', iniciarMusica);
-</script>
 
 </body>
 </html>
