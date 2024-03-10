@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Música en la página</title>
-</head>
-<body onclick="iniciarMusica()">
+<html>
+<body>
 
-<audio id="musica" controls loop>
-  <source src="music.mp3" type="audio/mp3">
-  Tu navegador no soporta la etiqueta de audio.
+<h1>The audio autoplay attribute</h1>
+
+<p>Click on the play button to play a sound:</p>
+
+<audio controls autoplay id=audio1>
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
 
-<script>
-  function iniciarMusica() {
-    var musica = document.getElementById('musica');
-    musica.play();
-    // Elimina el evento clic después de la primera interacción
-    document.body.removeEventListener('click', iniciarMusica);
-  }
-
-  // Agrega el evento clic al cuerpo de la página
-  document.body.addEventListener('click', iniciarMusica);
-</script>
-
+<input type=button onclick="javascript:play1();" value="Play">
 </body>
 </html>
+
+<script>
+function play1(){
+document.getElementById('audio1').play();
+}
+</script> 
