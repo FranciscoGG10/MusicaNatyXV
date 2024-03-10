@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Música en la página</title>
+    <title>Reproducción de Audio al Clic</title>
 </head>
-<body onclick="iniciarMusica()">
+<body>
 
-<audio id="musica" controls loop>
-  <source src="music.mp3" type="audio/mp3">
-  Tu navegador no soporta la etiqueta de audio.
+<audio id="miAudio" controls>
+    <source src="music.mp3" type="audio/mp3">
+    Tu navegador no soporta la etiqueta de audio.
 </audio>
 
 <script>
-  function iniciarMusica() {
-    var musica = document.getElementById('musica');
-    musica.play();
-    // Elimina el evento clic después de la primera interacción
-    document.body.removeEventListener('click', iniciarMusica);
-  }
+    document.addEventListener('DOMContentLoaded', function () {
+        var audio = document.getElementById('miAudio');
 
-  // Agrega el evento clic al cuerpo de la página
-  document.body.addEventListener('click', iniciarMusica);
+        document.addEventListener('click', function () {
+            audio.play();
+        });
+    });
 </script>
 
 </body>
