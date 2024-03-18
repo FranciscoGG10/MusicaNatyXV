@@ -6,25 +6,27 @@
     <title>Reproducción de Audio al Clic</title>
     <style>
         /* Estilos para el botón */
-        #btnDameClick {
+        #btnTocaAqui {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #B5E5F4;
+            background-color: transparent; /* Fondo transparente */
             border: none;
             color: goldenrod; /* Color de la fuente en dorado */
+            font-family: "Century Gothic", sans-serif; /* Cambiar la fuente a Century Gothic */
             font-size: 24px;
             padding: 12px 24px;
             cursor: pointer;
             border-radius: 50%; /* Hacer el botón redondo */
             font-style: italic; /* Aplicar estilo cursiva */
+            font-weight: bold; /* Poner el texto en negritas */
         }
     </style>
 </head>
 <body>
 
-<button id="btnDameClick">Dame click</button>
+<button id="btnTocaAqui">Toca aquí</button>
 
 <audio id="miAudio">
     <source src="music.mp3" type="audio/mp3">
@@ -34,15 +36,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var audio = document.getElementById('miAudio');
-        var btnDameClick = document.getElementById('btnDameClick');
+        var btnTocaAqui = document.getElementById('btnTocaAqui');
 
         function playAudioAndHideButton() {
             audio.play();
-            btnDameClick.style.display = 'none';
+            btnTocaAqui.style.display = 'none';
         }
 
         document.addEventListener('click', playAudioAndHideButton);
-        btnDameClick.addEventListener('click', playAudioAndHideButton);
+        btnTocaAqui.addEventListener('click', playAudioAndHideButton);
     });
 </script>
 
