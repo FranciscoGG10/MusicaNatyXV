@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproducción de Audio al Clic</title>
+    <style>
+        /* Estilos para el botón */
+        #btnDameClick {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #B5E5F4;
+            border: none;
+            color: goldenrod; /* Color de la fuente en dorado */
+            font-size: 24px;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 50%; /* Hacer el botón redondo */
+            font-style: italic; /* Aplicar estilo cursiva */
+        }
+    </style>
 </head>
 <body>
+
+<button id="btnDameClick">Dame click</button>
 
 <audio id="miAudio">
     <source src="music.mp3" type="audio/mp3">
@@ -15,10 +34,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var audio = document.getElementById('miAudio');
+        var btnDameClick = document.getElementById('btnDameClick');
 
-        document.addEventListener('click', function () {
+        function playAudioAndHideButton() {
             audio.play();
-        });
+            btnDameClick.style.display = 'none';
+        }
+
+        document.addEventListener('click', playAudioAndHideButton);
+        btnDameClick.addEventListener('click', playAudioAndHideButton);
     });
 </script>
 
